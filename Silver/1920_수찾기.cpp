@@ -3,9 +3,13 @@
 using namespace std;
 
 int main() {
+
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+
 	int n, m;
-	int A[100001];
 	cin >> n;
+	int A[n];
 	for (int i = 0; i < n; i++) {
 		cin >> A[i];
 	}
@@ -15,11 +19,11 @@ int main() {
 	for (int i = 0; i < m; i++) {
 		int tmp;
 		cin >> tmp;
-		if (binary_search(A, A, tmp)) {
-			cout << 1 << endl;
+		if (binary_search(A, A + n, tmp)) {
+			cout << 1 << ' ';
 		}
 		else {
-			cout << 0 << endl;
+			cout << 0 << ' ';
 		}
 	}
 }
